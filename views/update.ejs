@@ -1,0 +1,39 @@
+<%- include("./partials/header") %>
+<%- include("./partials/nav")%>
+
+
+
+<div class="bg-white relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-20 max-w-7xl">
+    <div class="w-full max-w-md mx-auto md:max-w-sm md:px-0 md:w-96 sm:px-4">
+      <div class="flex flex-col">
+        <div>
+          <h2 class="text-4xl text-black">Add-New-Post</h2>
+        </div>
+      </div>
+      <form action="/users/updateblog/<%= currentblog._id %>" method="post"> 
+        <div class="mt-4 space-y-6">
+          <div class="col-span-full">
+              <label class="block mb-3 text-sm font-medium text-gray-600"> Title   </label>
+              <input type="text" name="title" placeholder="<%= currentblog.title %>" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+            </div>
+            <div class="col-span-full">
+                <label class="block mb-3 text-sm font-medium text-gray-600"> Blog-desc  </label>
+                    <textarea type="text" name="description" placeholder="<%= currentblog.description %>"  class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm" ></textarea>
+              </div>
+
+          <div class="col-span-full">
+            <label class="block mb-3 text-sm font-medium text-gray-600"> Img-Url  </label>
+            <input type="text" name="blogImage" placeholder="<%= currentblog.blogImage %>" class="block w-full px-6 py-3 text-black bg-white border border-gray-200 rounded-full appearance-none placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
+          </div>
+
+          <div class="col-span-full">
+            <button type="submit" class="items-center justify-center w-full px-6 py-2.5 text-center text-white duration-200 bg-green-500 border-2 border-green-500 rounded-full nline-flex hover:bg-transparent hover:border-black hover:text-black focus:outline-none focus-visible:outline-black text-sm focus-visible:ring-black"> update blog </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+<%- include("./partials/footer") %>
